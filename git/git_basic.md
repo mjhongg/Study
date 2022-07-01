@@ -23,16 +23,33 @@
 <br>
 
 **git commit** : 변경 내용 기록
+* _git commit_ : commit 수행. vi 편집기로 commit 메시지 작성
+* _git commit -m "<commit 메시지>"_ : commit 메시지 한 줄 입력과 동시에 commit
+* _git commit --amend_ : 이미 commit 한 건에 대해 commit 문구 변경 및 덮어쓰기
 <br>
 
-**git reset**
+**git reset** : commit 취소
+* _git reset --soft <commit id>_ : commit 된 파일들을 staging area 로 돌려놓음 (commit 하기 직전 상태)
+* _git reset --mixed <commit id>_ : commit 된 파일들을 working directory 로 돌려놓음 (add 하기 직전 상태)
+* _git reset --hard <commit id>_ : commit 된 파일들 중 tracked 파일들을 working directory 에서 삭제
+	* _git clean -f_ : untracked files 까지 삭제하고자 하는 경우
+	* _git clean -n_ : 삭제 대상(untracked files) 목록 확인
+* _HEAD~n_ : 가장 최신 commit 부터 n개의 commit 취소
+* _HEAD^_ : 가장 최식 commit 취소 (기본 옵션 mixed)
 <br>
 
-**git revert**
+**git revert** : commit 취소
+* _git revert <commit id>_ : commit id 까지 이력을 남기며 취소
 <br>
 
-**git amend**
+**reset과 revert**
+* _reset_ : 되돌아간 commit 이후의 commit 이력을 남기지 않음
+* _revert_ : 되돌아간 commit 이후의 commit 이력을 남겨두고 새로운 commit 을 생성
 <br>
+
+**git rebase**
+
+**git merge**
 
 **git log** : 작업 내역 조회
 * _git log_ : commit 기록 조회
@@ -41,3 +58,6 @@
 * _git log --graph_ : commit 기록 그래프 형식으로 출력
 * _git log -p_ : diff 결과 출력
 * _git log -2_ : 최근 2개의 commit 내역 출력
+<br>
+
+**git reflog**
