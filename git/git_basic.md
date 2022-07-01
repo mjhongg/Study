@@ -47,9 +47,23 @@
 * _revert_ : 되돌아간 commit 이후의 commit 이력을 남겨두고 새로운 commit 을 생성
 <br>
 
-**git rebase**
+**git merge** : 브랜치 병합
+* _git merge feature_ : feature 브랜치를 병합
+	* _git checkout master_ : 우선 기준이 될 브랜치로 checkout. 그 후 위 명령어 수행
+	* _git merge master feature_ : featuer 브랜치를 master 브랜치에 병합
+	* _Fast-forward_ : feature 브랜치가 master 브랜치에 기반한 브랜치일 경우. 최신 commit 위치만 변경됨
+	* _3-way Merge_ : master 가 feature 의 조상 브랜치이지만 master 브랜치의 또 다른 신규 commit 으로인해 가장 최신 commit 과 조상이 되는 commit 달라졌을때. 신규 commit 을 발생시키면서 병합
+* conflict 발생
+	* merge 하는 두 브랜치에서 동일 파일의 한 부분을 동시에 수정 시 conflict 발생. 직접 수정 필요
+	* 충돌이 일어난 파일에 대해서는 unmerged 상태로 표시됨
+<br>
 
-**git merge**
+**git rebase** : 브랜치 병합
+* 
+<br>
+
+**stashing**
+<br>
 
 **git log** : 작업 내역 조회
 * _git log_ : commit 기록 조회
