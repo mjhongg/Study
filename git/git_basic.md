@@ -29,9 +29,10 @@
 <br>
 
 **git reset** : commit 취소
-* _git reset --soft <commit id>_ : commit 된 파일들을 staging area 로 돌려놓음 (commit 하기 직전 상태)
-* _git reset --mixed <commit id>_ : commit 된 파일들을 working directory 로 돌려놓음 (add 하기 직전 상태)
-* _git reset --hard <commit id>_ : commit 된 파일들 중 tracked 파일들을 working directory 에서 삭제
+* _git reset --soft "<commit id>"_ : commit 된 파일들을 staging area 로 돌려놓음 (commit 하기 직전 상태)
+	* _git reset --sotf HEAD~n"_ : n 개의 commit 취소 및 staging area 로 돌려놓음
+* _git reset --mixed "<commit id>"_ : commit 된 파일들을 working directory 로 돌려놓음 (add 하기 직전 상태)
+* _git reset --hard "<commit id>"_ : commit 된 파일들 중 tracked 파일들을 working directory 에서 삭제
 	* _git clean -f_ : untracked files 까지 삭제하고자 하는 경우
 	* _git clean -n_ : 삭제 대상(untracked files) 목록 확인
 * _HEAD~n_ : 가장 최신 commit 부터 n개의 commit 취소
